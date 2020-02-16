@@ -1,49 +1,20 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 int main()
 {
-    int i, space, rows, k=0;
-    printf("Enter number of rows: ");
-    scanf("%d",&rows);
-    for(i=1; i<=rows; ++i, k=0)
-    {
-        for(space=1; space<=rows-i; ++space)
-        {
-            printf("  ");
-        }
-        while(k != 2*i-1)
-        {
-            printf("* ");
-            ++k;
-        }
-        printf("\n");
-    }
-
- for(i=rows; i>0; --i, k=0)
-    {
-        for(space=1; space<=rows-i; ++space)
-        {
-            printf("  ");
-        }
-        while(k != 2*i-1)
-        {
-            printf("* ");
-            ++k;
-        }
-        printf("\n");
-    }
-
-    return 0;
+int a[10],n,sum=0,*ptr,i;
+printf("enter elements");
+scanf("%d",&n);
+printf("enter %d elements",n);
+for(i=0;i<n;i++)
+{
+    scanf("%d",&a[i]);
 }
-OUTPUT:
-Enter number of rows: 5
-        *
-      * * *
-    * * * * *
-  * * * * * * *
-* * * * * * * * *
-* * * * * * * * *
-  * * * * * * *
-    * * * * *
-      * * *
-        *
-
+ptr=a[0];
+for(i=0;i<n;i++)
+{
+ sum+=*(ptr+i);
+}
+printf("sum of array elements %d",sum);
+}
